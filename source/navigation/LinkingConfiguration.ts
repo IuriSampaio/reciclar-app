@@ -7,12 +7,19 @@
 import { LinkingOptions } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 
-import { RootStackParamList } from '../types';
+import { RootStackParamList } from '../../types';
 
 const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.makeUrl('/')],
   config: {
     screens: {
+      AuthRoutes: {
+        screens: {
+          Login: 'login',
+          Landing: 'landing',
+          Register: 'register'
+        },
+      },
       Root: {
         screens: {
           TabOne: {
@@ -27,7 +34,6 @@ const linking: LinkingOptions<RootStackParamList> = {
           },
         },
       },
-      Modal: 'modal',
       NotFound: '*',
     },
   },
